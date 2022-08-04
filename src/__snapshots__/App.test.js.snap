@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test APP get 1`] = `
+<input
+  placeholder="input..."
+  type="text"
+  value=""
+/>
+`;
