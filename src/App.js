@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import {  Route, Routes, Link } from 'react-router-dom';
+import Counter from './Counter/Counter';
 import AppRouter from './router/AppRouter';
 
 import Users from './users/Users';
@@ -22,7 +23,7 @@ function App() {
 
 	return (
 		<div className='App'>
-			<h1>Hello World</h1>
+            <h1>Hello World</h1>
 			{data && <h2 style={{ color: 'red' }}>{data}</h2>}
 			<input
 				value={value}
