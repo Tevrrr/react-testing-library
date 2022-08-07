@@ -1,21 +1,19 @@
 /** @format */
 
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router';
-import { Provider } from 'react-redux';
 import App from './App';
-import { createReduxStore } from './store/store';
+import renderWithRedux from './tests/helpers/renderWithRedux';
 
 describe('Router test', () => {
 	test('about/main click', () => {
-		render(
-			<Provider store={createReduxStore()}>
-				<MemoryRouter>
-					<App />
-				</MemoryRouter>
-			</Provider>
+		renderWithRedux(
+			<MemoryRouter>
+				<App />
+			</MemoryRouter>
 		);
+
 		const mainLink = screen.getByTestId('main-link');
 		const aboutLink = screen.getByTestId('about-link');
 		userEvent.click(aboutLink);

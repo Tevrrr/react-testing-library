@@ -1,5 +1,7 @@
-import React from 'react'
+/** @format */
+
+import React from 'react';
 
 export default function AboutPage() {
-  return <div data-testid='about-page'>About Page</div>;
+	return <div data-testid='about-page'>About Page</div>;
 }

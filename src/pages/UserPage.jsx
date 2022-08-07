@@ -1,5 +1,7 @@
-import React from 'react'
+/** @format */
+
+import React from 'react';
 
 export default function UserPage() {
-  return <div data-testid='user-page'>UserPage</div>;
+	return <div data-testid='user-page'>UserPage</div>;
 }

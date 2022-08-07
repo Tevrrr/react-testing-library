@@ -14,14 +14,24 @@ export default function Users() {
 		setUsers(response.data);
 	};
 
-    useEffect(() => {
-        loadUsers();
-    }, []);
+	useEffect(() => {
+		loadUsers();
+	}, []);
 
 	return (
 		<ul>
 			{users.map((user) => {
-				return <><Link to={`/users/${user.id}`} data-testid='user-item' key={user.id}>{user.name}</Link><br/></>;
+				return (
+					<>
+						<Link
+							to={`/users/${user.id}`}
+							data-testid='user-item'
+							key={user.id}>
+							{user.name}
+						</Link>
+						<br />
+					</>
+				);
 			})}
 		</ul>
 	);

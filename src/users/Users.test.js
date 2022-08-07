@@ -1,11 +1,10 @@
 /** @format */
 
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import Users from './Users';
 import axios from 'axios';
 import userEvent from '@testing-library/user-event';
-import { MemoryRouter, Route, Routes } from 'react-router';
-import UserPage from '../pages/UserPage';
+import { MemoryRouter } from 'react-router';
 import AppRouter from '../router/AppRouter';
 
 jest.mock('axios');
@@ -51,8 +50,8 @@ describe('user test', () => {
 		axios.get.mockReturnValue(response);
 		render(
 			<MemoryRouter>
-                    <Users />
-                    <AppRouter/>
+				<Users />
+				<AppRouter />
 			</MemoryRouter>
 		);
 

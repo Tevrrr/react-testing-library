@@ -1,9 +1,11 @@
-import React from 'react'
+/** @format */
+
+import React from 'react';
 
 export default function ErrorPage() {
-  return (
+	return (
 		<div data-testid='error-page'>
 			<b>Error!!!</b>
 		</div>
-  );
+	);
 }

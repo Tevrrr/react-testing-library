@@ -1,16 +1,19 @@
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import { createReduxStore } from '../store/store';
-import Counter from "./Counter";
-import {Provider} from 'react-redux'
+/** @format */
 
- describe('Counter test', () => {
-    test('Test router', async () => {
-        render(<Provider store={createReduxStore()}><Counter /></Provider>) ;
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import Counter from './Counter';
+import renderWithRedux from '../tests/helpers/renderWithRedux';
+
+describe('Counter test', () => {
+	test('Test router', async () => {
+		renderWithRedux(<Counter />, { counter: { value: 10 } });
+
 		const incrementBtn = screen.getByTestId('increment-btn');
-		expect(screen.getByTestId('value-title')).toHaveTextContent('0');
+
+		expect(screen.getByTestId('value-title')).toHaveTextContent('10');
+
 		userEvent.click(incrementBtn);
-		expect(screen.getByTestId('value-title')).toHaveTextContent('1');
+		expect(screen.getByTestId('value-title')).toHaveTextContent('11');
 	});
-    
- });
+});
